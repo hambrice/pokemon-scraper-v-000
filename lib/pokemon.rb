@@ -19,7 +19,7 @@ class Pokemon
     hash[:name] = db.execute("SELECT name FROM pokemon WHERE pokemon.id = ?", id)[0][0]
     hash[:type] = db.execute("SELECT type FROM pokemon WHERE pokemon.id = ?", id)[0][0]
     hash[:db] = db
-    binding.pry
+    #binding.pry
     Pokemon.new(hash)
   end
 end
