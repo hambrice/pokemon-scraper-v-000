@@ -2,7 +2,7 @@ require 'pry'
 
 class Pokemon
   attr_accessor :id, :name, :type, :db, :hp
-  def initialize(hash, hp = 0)
+  def initialize(hash, hp = nil)
     @id = hash[:id]
     @name = hash[:name]
     @type = hash[:type]
