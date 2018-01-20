@@ -4,7 +4,7 @@ class Pokemon
     @db = hash[:db]
   end
   
-  def save
-    @db.
+  def save(name, type, db)
+    db.execute ()
   end
 end
