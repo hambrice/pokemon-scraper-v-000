@@ -17,6 +17,6 @@ class Pokemon
     hash[:name] = db.execute("SELECT name FROM pokemon WHERE pokemon.id = ?", id)
     hash[:type] = db.execute("SELECT type FROM pokemon WHERE pokemon.id = ?", id)
     hash[:db] = db
-    Pokemon.new()
+    Pokemon.new(hash)
   end
 end
