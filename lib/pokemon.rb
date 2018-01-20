@@ -16,7 +16,7 @@ class Pokemon
     array = db.execute("SELECT * FROM pokemon WHERE pokemon.id = ?", id)[0]
     #binding.pry
     if array[3].class == NilClass 
-    hash = { id: id, name: db.execute("SELECT name FROM pokemon WHERE pokemon.id = ?", id)[0][0], type: db.execute("SELECT type FROM pokemon WHERE pokemon.id = ?", id)[0][0], db: db}  
+    Pokemon.new(id: id, name: db.execute("SELECT name FROM pokemon WHERE pokemon.id = ?", id)[0][0], type: db.execute("SELECT type FROM pokemon WHERE pokemon.id = ?", id)[0][0], db: db)  
     #hash[name:] = db.execute("SELECT name FROM pokemon WHERE pokemon.id = ?", id)[0][0]
    # hash[type] = db.execute("SELECT type FROM pokemon WHERE pokemon.id = ?", id)[0][0]
     #binding.pry
