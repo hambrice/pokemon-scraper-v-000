@@ -1,3 +1,5 @@
+require 'pry'
+
 class Pokemon
   attr_accessor :id, :name, :type, :db
   def initialize(hash)
@@ -17,6 +19,7 @@ class Pokemon
     hash[:name] = db.execute("SELECT name FROM pokemon WHERE pokemon.id = ?", id)
     hash[:type] = db.execute("SELECT type FROM pokemon WHERE pokemon.id = ?", id)
     hash[:db] = db
+    binding.pry
     Pokemon.new(hash)
   end
 end
