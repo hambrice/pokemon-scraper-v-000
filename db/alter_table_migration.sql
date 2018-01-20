@@ -1,1 +1,1 @@
-ALTER pokemon 
+ALTER TABLE pokemon 
