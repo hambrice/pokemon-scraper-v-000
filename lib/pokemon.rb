@@ -15,6 +15,7 @@ class Pokemon
     
     #binding.pry
     array = db.execute("SELECT * FROM pokemon WHERE pokemon.id = ?", id)[0]
+    binding.pry
     if array[3] != nil 
     hash[:id] = id
     hash[:name] = db.execute("SELECT name FROM pokemon WHERE pokemon.id = ?", id)[0][0]
