@@ -1,5 +1,5 @@
 class Pokemon
-  attr_accessor :db
+  attr_accessor :id, :name, :type, :db
   def initialize(hash)
     @id = hash[:id]
     @name = hash[:name]
