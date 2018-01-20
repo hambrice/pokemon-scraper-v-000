@@ -1,7 +1,7 @@
 class Pokemon
   attr_accessor :db
   def initialize(hash)
-    @db = hash[:db]
+   # @db = hash[:db]
   end
   
   def save(name, type, db)
