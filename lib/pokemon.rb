@@ -20,7 +20,7 @@ class Pokemon
     #binding.pry
     #hash[:hp] = db.execute("SELECT hp FROM pokemon WHERE pokemon.id = ?", id)[0][0] 
    # hash[:db] = db
-    #binding.pry
+    binding.pry
     Pokemon.new(array, db)
   end
   
