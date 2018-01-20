@@ -16,15 +16,22 @@ class Pokemon
     #binding.pry
     array = db.execute("SELECT * FROM pokemon WHERE pokemon.id = ?", id)[0]
     if array[3] > 0
-      
     hash[:id] = id
     hash[:name] = db.execute("SELECT name FROM pokemon WHERE pokemon.id = ?", id)[0][0]
     hash[:type] = db.execute("SELECT type FROM pokemon WHERE pokemon.id = ?", id)[0][0]
     binding.pry
     hash[:hp] = db.execute("SELECT hp FROM pokemon WHERE pokemon.id = ?", id)[0][0] 
     hash[:db] = db
-    #binding.pry
+    binding.pry
     Pokemon.new(hash)
+  else
+    hash[:id] = id
+    hash[:name] = db.execute("SELECT name FROM pokemon WHERE pokemon.id = ?", id)[0][0]
+    hash[:type] = db.execute("SELECT type FROM pokemon WHERE pokemon.id = ?", id)[0][0]
+    hash[:db] = db
+    Pokemon.new(hash)
+  end
+    
   end
   
   def alter_hp(hp, db)
