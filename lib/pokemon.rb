@@ -5,6 +5,6 @@ class Pokemon
   end
   
   def save
-    
+    @db.
   end
 end
