@@ -5,5 +5,6 @@ class Pokemon
     @db = db
   end
   
-  def save 
+  def save
+  end
 end
