@@ -2,7 +2,7 @@ require 'pry'
 
 class Pokemon
   attr_accessor :id, :name, :type, :db, :hp
-  def initialize(hash)
+  def initialize(:id, :name, :type, hp: nil, :db)
     @id = hash[:id]
     @name = hash[:name]
     @type = hash[:type]
@@ -15,16 +15,17 @@ class Pokemon
   end
   
   def self.find(id, db)
-    hash={}
-    binding.pry
-    hash[:id] = id
-    hash[:name] = db.execute("SELECT name FROM pokemon WHERE pokemon.id = ?", id)[0][0]
-    hash[:type] = db.execute("SELECT type FROM pokemon WHERE pokemon.id = ?", id)[0][0]
+    #hash={}
     #binding.pry
-    hash[:hp] = db.execute("SELECT hp FROM pokemon WHERE pokemon.id = ?", id)[0][0] 
-    hash[:db] = db
+    array = db.execute("SELECT * FROM pokemon WHERE pokemon.id = ?", id)[0][0]
+    #hash[:id] = id
+    #hash[:name] = db.execute("SELECT name FROM pokemon WHERE pokemon.id = ?", id)[0][0]
+    #hash[:type] = db.execute("SELECT type FROM pokemon WHERE pokemon.id = ?", id)[0][0]
     #binding.pry
-    Pokemon.new(hash)
+    #hash[:hp] = db.execute("SELECT hp FROM pokemon WHERE pokemon.id = ?", id)[0][0] 
+   # hash[:db] = db
+    #binding.pry
+    Pokemon.new(array, db)
   end
   
   def alter_hp(hp, db)
