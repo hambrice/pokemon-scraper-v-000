@@ -6,8 +6,8 @@ class Pokemon
     @id = hash[:id]
     @name = hash[:name]
     @type = hash[:type]
-   @db = hash[:db]
-   #@hp = hp
+    @db = hash[:db]
+    @hp = hash[:hp]
   end
   
   def self.save(name, type, db)
