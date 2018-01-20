@@ -22,7 +22,7 @@ class Pokemon
     #binding.pry
     #hash[db] = db
     #binding.pry
-    Pokemon.new(hash)
+    #Pokemon.new(hash)
   else
     hash[id] = id
     hash[name] = db.execute("SELECT name FROM pokemon WHERE pokemon.id = ?", id)[0][0]
