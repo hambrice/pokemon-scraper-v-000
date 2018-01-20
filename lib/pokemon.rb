@@ -1,12 +1,13 @@
 require 'pry'
 
 class Pokemon
-  attr_accessor :id, :name, :type, :db
-  def initialize(hash)
+  attr_accessor :id, :name, :type, :db, :hp
+  def initialize(hash, hp = 0)
     @id = hash[:id]
     @name = hash[:name]
     @type = hash[:type]
    @db = hash[:db]
+   @hp = hp
   end
   
   def self.save(name, type, db)
