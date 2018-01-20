@@ -23,4 +23,7 @@ class Pokemon
     #binding.pry
     Pokemon.new(hash)
   end
+  
+  def alter_hp(hp)
+    
 end
