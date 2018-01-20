@@ -11,7 +11,7 @@ class Pokemon
   end
   
   def self.find(id, db)
-    #hash={}
+    hash={}
     
     #binding.pry
     array = db.execute("SELECT * FROM pokemon WHERE pokemon.id = ?", id)[0]
