@@ -13,6 +13,10 @@ class Pokemon
   
   def self.find(id, db)
     hash={}
-    hash{:name} = db.execute("SELECT name FROM pokemon WHERE pokemon.id = ?", id)
+    hash[:id] = id
+    hash[:name] = db.execute("SELECT name FROM pokemon WHERE pokemon.id = ?", id)
+    hash[:type] = db.execute("SELECT type FROM pokemon WHERE pokemon.id = ?", id)
+    hash[:db] = db
+    Pokemon.new()
   end
 end
