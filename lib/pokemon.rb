@@ -24,6 +24,6 @@ class Pokemon
     Pokemon.new(hash)
   end
   
-  def alter_hp(hp)
-    
+  def alter_hp(hp, db)
+    db.execute("UPDATE ")
 end
