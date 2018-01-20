@@ -21,7 +21,7 @@ class Pokemon
     #hash[:hp] = db.execute("SELECT hp FROM pokemon WHERE pokemon.id = ?", id)[0][0] 
    # hash[:db] = db
     binding.pry
-    Pokemon.new(array, db)
+    Pokemon.new(name:, db)
   end
   
   def alter_hp(hp, db)
